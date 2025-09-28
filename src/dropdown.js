@@ -11,6 +11,9 @@ class VanillaDropdown {
     this.menu = element.querySelector('.dropdown-menu');
     this.isOpen = false;
 
+    this.selectedValue = null;
+    this.selectedText = null;
+
     this.init();
   }
 
@@ -63,10 +66,38 @@ class VanillaDropdown {
     // Handle menu item clicks
     this.menu.addEventListener('click', (e) => {
       if (e.target.tagName === 'A') {
-        // Close dropdown after clicking a menu item
+        e.preventDefault();
+
+        this.selectedValue =
+          e.target.getAttribute('data-value') || e.target.href;
+        this.selectedText = e.target.textContent.trim();
+
+        if (this.options.updateToggleText) {
+          this.toggle.textContent = this.selectedText + ' ▼';
+        }
+
+        this.element.dispatchEvent(
+          new CustomEvent('dropdown:select', {
+            detail: {
+              dropdown: this,
+              value: this.selectedValue,
+              text: this.selectedText,
+              element: e.target,
+            },
+          })
+        );
+
         this.closeDropdown();
       }
     });
+  }
+
+  getSelectedValue() {
+    return this.selectedValue;
+  }
+
+  getSelectedText() {
+    return this.selectedText;
   }
 
   setupAccessibility() {
@@ -167,9 +198,7 @@ class VanillaDropdown {
   }
 
   destroy() {
-    // Clean up event listeners and reset attributes
     this.closeDropdown();
-    // Note: In a production version, you'd want to remove all event listeners
   }
 
   // Static method to close all open dropdowns except the current one
