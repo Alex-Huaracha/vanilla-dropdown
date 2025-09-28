@@ -199,6 +199,11 @@ class VanillaDropdown {
 
   destroy() {
     this.closeDropdown();
+    const index = VanillaDropdown.instances.indexOf(this);
+    if (index > -1) {
+      VanillaDropdown.instances.splice(index, 1);
+    }
+    delete this.element.vanillaDropdown;
   }
 
   // Static method to close all open dropdowns except the current one
