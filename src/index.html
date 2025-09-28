@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vanilla Dropdown Component</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Vanilla Dropdown Component Demo</h1>
+
+    <div class="demo-container">
+      <h2>Click Dropdown</h2>
+      <div class="dropdown" data-trigger="click">
+        <button class="dropdown-toggle">Click Menu ▼</button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+      </div>
+
+      <h2>Hover Dropdown</h2>
+      <div class="dropdown" data-trigger="hover">
+        <button class="dropdown-toggle">Hover Menu ▼</button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="dropdown.js"></script>
+  </body>
+</html>
