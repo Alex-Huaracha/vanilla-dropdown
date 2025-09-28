@@ -4,15 +4,28 @@
   "description": "A simple dropdown component built with vanilla JavaScript.",
   "main": "src/dropdown.js",
   "style": "src/dropdown.css",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "files": [
+    "src/dropdown.js",
+    "src/dropdown.css",
+    "README.md",
+    "LICENSE"
+  ],
   "keywords": [
     "dropdown",
     "vanilla-js",
     "component",
-    "ui"
+    "ui",
+    "glassmorphism",
+    "dark-theme"
   ],
   "author": "Alex Huaracha",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alex-Huaracha/vanilla-dropdown.git"
+  },
+  "homepage": "https://github.com/Alex-Huaracha/vanilla-dropdown#readme",
+  "bugs": {
+    "url": "https://github.com/Alex-Huaracha/vanilla-dropdown/issues"
+  }
 }
