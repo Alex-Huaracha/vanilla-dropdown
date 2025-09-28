@@ -1,5 +1,5 @@
 {
-  "name": "vanilla-dropdown",
+  "name": "vanilla-dropdown-glass",
   "version": "1.0.0",
   "description": "A simple dropdown component built with vanilla JavaScript.",
   "main": "src/dropdown.js",
